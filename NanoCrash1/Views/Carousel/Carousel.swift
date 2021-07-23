@@ -80,20 +80,28 @@ extension Carousel: UICollectionViewDataSource {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = options[indexPath.row].image
         cell.contentView.addSubview(imageView)
+    
         
-        let description = UILabel(frame: .zero)
-        description.translatesAutoresizingMaskIntoConstraints = false
-        description.text = options[indexPath.row].description
-        cell.contentView.addSubview(description)
+        let button: UIButton = UIButton(frame: .zero)
+        button.addTarget(self, action:#selector(Carousel.cellTapped), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.layer.borderWidth = 0.5
+        button.layer.borderColor = (UIColor(red: 0, green: 0, blue: 0, alpha: 1.0)).cgColor
+        button.layer.cornerRadius = 20
+        button.setTitle(options[indexPath.row].description, for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        cell.contentView.addSubview(button)
             
         NSLayoutConstraint.activate([
-            imageView.topAnchor.constraint(equalTo: cell.topAnchor, constant: 250),
+            imageView.topAnchor.constraint(equalTo: cell.topAnchor, constant: 220),
             imageView.bottomAnchor.constraint(equalTo: cell.bottomAnchor, constant: -250),
             imageView.leadingAnchor.constraint(equalTo: cell.leadingAnchor, constant: 60),
             imageView.trailingAnchor.constraint(equalTo: cell.trailingAnchor, constant: -60),
             
-            description.centerYAnchor.constraint(equalTo: cell.centerYAnchor, constant: 200),
-            description.centerXAnchor.constraint(equalTo: cell.centerXAnchor, constant: -2)
+            button.topAnchor.constraint(equalTo: cell.topAnchor, constant: 520),
+            button.bottomAnchor.constraint(equalTo: cell.bottomAnchor, constant: -160),
+            button.leadingAnchor.constraint(equalTo: cell.leadingAnchor, constant: 60),
+            button.trailingAnchor.constraint(equalTo: cell.trailingAnchor, constant: -60),
         ])
         return cell
     }

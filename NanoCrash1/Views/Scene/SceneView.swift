@@ -34,6 +34,7 @@ class SceneView: UIView {
         sceneDescription.text = scene.description
         sceneDescription.numberOfLines = 0
         sceneDescription.translatesAutoresizingMaskIntoConstraints = false
+//        sceneDescription.font = UIFont(name: ".SFProText-Regular", size: 18)
         sceneView.addSubview(sceneDescription)
         
         carousel.translatesAutoresizingMaskIntoConstraints = false
