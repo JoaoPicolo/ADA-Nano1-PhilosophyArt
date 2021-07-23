@@ -23,7 +23,7 @@
 
 /* Begin PBXFileReference section */
 		C41DF5EA26A9023500001ECF /* SceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneView.swift; sourceTree = "<group>"; };
-		C41E9F7026A845C400E7FCB6 /* NanoCrash1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NanoCrash1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C41E9F7026A845C400E7FCB6 /* Philosophy Art.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Philosophy Art.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C41E9F7326A845C400E7FCB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C41E9F7526A845C400E7FCB6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C41E9F7726A845C400E7FCB6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -87,7 +87,7 @@
 		C41E9F7126A845C400E7FCB6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C41E9F7026A845C400E7FCB6 /* NanoCrash1.app */,
+				C41E9F7026A845C400E7FCB6 /* Philosophy Art.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -142,7 +142,7 @@
 			);
 			name = NanoCrash1;
 			productName = NanoCrash1;
-			productReference = C41E9F7026A845C400E7FCB6 /* NanoCrash1.app */;
+			productReference = C41E9F7026A845C400E7FCB6 /* Philosophy Art.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -358,7 +358,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = br.dev.picolo.NanoCrash1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Philosophy Art";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -377,7 +377,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = br.dev.picolo.NanoCrash1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Philosophy Art";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
