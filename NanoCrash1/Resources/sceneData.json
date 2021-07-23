@@ -1,0 +1,271 @@
+[
+    {
+        "id": 0,
+        "description": "Você está na escola, sendo incomodado por alguns colegas. Ao voltar para casa vê em seu caminho uma academia de Karate e entra. Você se inscreve nas aulas?",
+        "options": [
+            {
+              "description": "Seguir seu caminho",
+              "nextScene": 0,
+              "imageName": "negative.png",
+              "penalty": 0
+            },
+            {
+              "description": "Se inscrever nas aulas",
+              "nextScene": 1,
+              "imageName": "punch.png",
+              "penalty": 1
+            },
+        ]
+    },
+    {
+        "id": 1,
+        "description": "Você começa as aulas, se diverte e aprende diversas técnicas de luta. Agora que você treina, seus agressores mexem ainda mais com você com o intuito de arrumar confusão. O que você faz?",
+        "options": [
+            {
+              "description": "Lutar",
+              "nextScene": 2,
+              "imageName": "angry.png",
+              "penalty": 0
+            },
+            {
+              "description": "Continuar treinando",
+              "nextScene": 3,
+              "imageName": "snorting.png",
+              "penalty": 1
+            },
+        ]
+    },
+    {
+        "id": 2,
+        "description": "Você ainda não obteve a técnica necessária para se defender e acabou se machucando. Começa a se perguntar se vale a pena continuar treinando...",
+        "options": [
+            {
+              "description": "Desistir",
+              "nextScene": 4,
+              "imageName": "worried.png",
+              "penalty": 0
+            },
+            {
+              "description": "Continuar treinando",
+              "nextScene": 3,
+              "imageName": "blink.png",
+              "penalty": 1
+            },
+        ]
+    },
+    {
+        "id": 3,
+        "description": "Com mais conhecimento, sua graduação aumenta. Mesmo com mais conhecimento, as implicações não acabam. Chegou a hora de tomar uma decisão de uma vez por todas.",
+        "options": [
+            {
+              "description": "Lutar",
+              "nextScene": 6,
+              "imageName": "angry.png",
+              "penalty": 0
+            },
+            {
+              "description": "Pedir ajuda",
+              "nextScene": 5,
+              "imageName": "blink.png",
+              "penalty": 1
+            },
+            {
+              "description": "Não fazer nada",
+              "nextScene": 3,
+              "imageName": "snorting.png",
+              "penalty": 0
+            },
+        ]
+    },
+    {
+        "id": 4,
+        "description": "O jogo acabou!",
+        "options": []
+    },
+    {
+        "id": 5,
+        "description": "Os agressores foram punidos pela escola e não se aproximarão mais de você. Por fazer a escolha certa, sua graduação aumenta.",
+        "options": [
+            {
+              "description": "Continuar",
+              "nextScene": 7,
+              "imageName": "ok.png",
+              "penalty": 0
+            },
+        ]
+    },
+    {
+        "id": 6,
+        "description": "Você consegue derrotar seus agressores. Na academia você relata ao seu mestre o que aconteceu e recebe a dica de pedir ajuda quando possível, pois não se deve procurar por brigas.",
+        "options": [
+            {
+              "description": "Continuar",
+              "nextScene": 7,
+              "imageName": "worried.png",
+              "penalty": 0
+            },
+        ]
+    },
+    {
+        "id": 7,
+        "description": "Ao voltar para casa você percebe que os seus agressores estão agora fazendo bullying com outra pessoa, mas isto ocore em uma rua vazia onde não é possível pedir ajuda. O que você vai fazer?",
+        "options": [
+            {
+              "description": "Ajudar o desconhecido",
+              "nextScene": 8,
+              "imageName": "punch.png",
+              "penalty": 0
+            },
+            {
+              "description": "Ignorar o que viu",
+              "nextScene": 9,
+              "imageName": "sleep.png",
+              "penalty": -1
+            },
+        ]
+    },
+    {
+        "id": 8,
+        "description": "No dia seguinte, o mestre reconhece que esta era a melhor ação diante da situação de justiça e te parabeniza por defender um desconhecido, mas te orienta a sempre tomar cuidado com estas situações.",
+        "options": [
+            {
+              "description": "Continuar",
+              "nextScene": 10,
+              "imageName": "ok.png",
+              "penalty": 1
+            },
+        ]
+    },
+    {
+        "id": 9,
+        "description": "No dia seguinte, o mestre te repreende por não agir em uma situação de injustiça e você acaba se frustrando com os ensinamentos. Por se calar diante da injustiça, sua graduação é reduzida. Deseja continuar treinando?",
+        "options": [
+            {
+              "description": "Continuar",
+              "nextScene": 10,
+              "imageName": "blink.png",
+              "penalty": 1
+            },
+            {
+              "description": "Desistir",
+              "nextScene": 4,
+              "imageName": "worried.png",
+              "penalty": 0
+            },
+        ]
+    },
+    {
+        "id": 10,
+        "description": "Você recebeu um nível de graduação por continuar treinando. O desconhecido que você viu no outro dia torna-se seu colega de academia e um grande amigo. Neste dia, ao voltar para casa com seu pai, ele começa a discutir no trânsito. Como proceder?",
+        "options": [
+            {
+              "description": "Orienta que todos se acalmem",
+              "nextScene": 11,
+              "imageName": "peace.png",
+              "penalty": 1
+            },
+            {
+              "description": "Começa a discutir junto",
+              "nextScene": 12,
+              "imageName": "punch.png",
+              "penalty": -10
+            },
+        ]
+    },
+    {
+        "id": 11,
+        "description": "Seu mestre viu o que aconteceu e no dia seguinte te da mais um nível de graduação por manter a calma. Neste mesmo dia, ao voltar para casa, voc6e vê seu colega de academia em uma briga de rua. O que você faz?",
+        "options": [
+            {
+              "description": "Decide não contar",
+              "nextScene": 13,
+              "imageName": "silence.png",
+              "penalty": 0
+            },
+            {
+              "description": "Decide contar ao mestre",
+              "nextScene": 14,
+              "imageName": "surprise.png",
+              "penalty": 1
+            },
+        ]
+    },
+    {
+        "id": 12,
+        "description": "Seu mestre viu o que aconteceu e se zanga. Você perdeu todos seus níveis de faixa e foi expulso da academia.",
+        "options": [
+            {
+              "description": "Continuar",
+              "nextScene": 4,
+              "imageName": "surprise.png",
+              "penalty": 0
+            },
+        ]
+    },
+    {
+        "id": 13,
+        "description": "Seu colega percebeu sua presença e te ameaça para não contar. Para se proteger, você conta ao professor e ele é expulso da academia, mas as ameaças continuam...",
+        "options": [
+            {
+              "description": "Continuar",
+              "nextScene": 15,
+              "imageName": "snorting.png",
+              "penalty": 0
+            },
+        ]
+    },
+    {
+        "id": 14,
+        "description": "Seu colega é expulso da academia e você recebe um nível de graduação por fazer a escolha correta. Ele te ameaça por ter contado...",
+        "options": [
+            {
+              "description": "Continuar",
+              "nextScene": 15,
+              "imageName": "worried.png",
+              "penalty": 0
+            },
+        ]
+    },
+    {
+        "id": 15,
+        "description": "Você decide treinar para se defender quando o ver pela próxima vez, mas quando se encontram na rua ele pede desculpas pelo que fez. O que você faz?",
+        "options": [
+            {
+              "description": "Lutar contra ele",
+              "nextScene": 16,
+              "imageName": "angry.png",
+              "penalty": 0
+            },
+            {
+              "description": "Decide desculpá-lo",
+              "nextScene": 17,
+              "imageName": "peace.png",
+              "penalty": 1
+            },
+        ]
+    },
+    {
+        "id": 16,
+        "description": "Você o derrota, mas acaba expulso da academia por brigar. Seu mestre entende o motivo e decide manter as graduações que você conquistou.",
+        "options": [
+            {
+              "description": "Continuar",
+              "nextScene": 4,
+              "imageName": "surprise.png",
+              "penalty": 0
+            },
+        ]
+    },
+    {
+        "id": 17,
+        "description": "Com este ato de auto conhecimento você ganha mais um nível de graduação.",
+        "options": [
+            {
+              "description": "Continuar",
+              "nextScene": 4,
+              "imageName": "peace.png",
+              "penalty": 0
+            },
+        ]
+    },
+]
