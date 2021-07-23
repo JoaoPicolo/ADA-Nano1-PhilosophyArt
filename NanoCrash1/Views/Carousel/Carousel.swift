@@ -86,10 +86,11 @@ extension Carousel: UICollectionViewDataSource {
         button.addTarget(self, action:#selector(Carousel.cellTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.borderWidth = 0.5
-        button.layer.borderColor = (UIColor(red: 0, green: 0, blue: 0, alpha: 1.0)).cgColor
+        button.layer.borderColor = UIColor(named: "appText")!.cgColor
         button.layer.cornerRadius = 20
         button.setTitle(options[indexPath.row].description, for: .normal)
-        button.setTitleColor(.black, for: .normal)
+        button.setTitleColor(UIColor(named: "appText"), for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .medium)
         cell.contentView.addSubview(button)
             
         NSLayoutConstraint.activate([
@@ -100,8 +101,8 @@ extension Carousel: UICollectionViewDataSource {
             
             button.topAnchor.constraint(equalTo: cell.topAnchor, constant: 520),
             button.bottomAnchor.constraint(equalTo: cell.bottomAnchor, constant: -160),
-            button.leadingAnchor.constraint(equalTo: cell.leadingAnchor, constant: 60),
-            button.trailingAnchor.constraint(equalTo: cell.trailingAnchor, constant: -60),
+            button.leadingAnchor.constraint(equalTo: cell.leadingAnchor, constant: 70),
+            button.trailingAnchor.constraint(equalTo: cell.trailingAnchor, constant: -70),
         ])
         return cell
     }
