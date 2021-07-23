@@ -19,7 +19,7 @@ final class ModelData: ObservableObject {
         "Parabéns! A faixa laranja representa a coragem e gentileza.",
         "Parabéns! A faixa verde representa harmonia e esperança.",
         "Parabéns! A faixa roxa representa a dignidade e purificação.",
-        "Parabéns! A faixa marrom representa equilíbrio e sensatex.",
+        "Parabéns! A faixa marrom representa equilíbrio e sensatez.",
         "Parabéns! A faixa preta representa a humildade e maturidade.",
     ]
     @Published var kimonos: [String] = [

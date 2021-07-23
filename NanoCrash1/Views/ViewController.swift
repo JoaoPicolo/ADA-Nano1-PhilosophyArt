@@ -8,83 +8,56 @@
 import UIKit
 
 class ViewController: UIViewController {
-    let scenes: [Scene] = ModelData().scenes
-    var kimonos: [String] = ModelData().kimonos
-    var descriptions: [String] = ModelData().descriptions
-    var finalGraduation = 0
-    lazy var scene = SceneView(frame: .zero, scene: scenes[0], selectionDelegate: self)
+    
+    @objc private func didStartGame() {
+        let rootVC = SceneViewController()
+        
+        let navigationVC = UINavigationController(rootViewController: rootVC)
+        navigationVC.modalPresentationStyle = .fullScreen
+        present(navigationVC, animated: true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupHierarchy()
-        setupComponents()
-        setupConstraints()
-    }
-    
-    override func loadView() {
-        let view = UIView()
-        view.backgroundColor = .systemBackground
-        self.view = view
-    }
-
-    func setupHierarchy() {
-        self.view.addSubview(scene)
-    }
-    
-    func setupComponents() {
-        scene.translatesAutoresizingMaskIntoConstraints = false
-    }
-    
-    func setupConstraints() {
+        view.backgroundColor = UIColor(named: "appBackground")
+        
+        let description = UILabel()
+        description.text = "Philosophy\n\t\t\t\tArt"
+        description.numberOfLines = 0
+        description.translatesAutoresizingMaskIntoConstraints = false
+        description.font = UIFont.systemFont(ofSize: 60, weight: .medium)
+        description.textColor = UIColor(named: "appText")
+        self.view.addSubview(description)
+        
+        let imageView: UIImageView = UIImageView(frame: .zero)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = UIImage(named: "mainIcon")
+        self.view.addSubview(imageView)
+        
+        let button: UIButton = UIButton(frame: .zero)
+        button.addTarget(self, action:#selector(self.didStartGame), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.layer.borderWidth = 0.5
+        button.layer.borderColor = UIColor(named: "appText")!.cgColor
+        button.layer.cornerRadius = 20
+        button.setTitle("Começar", for: .normal)
+        button.setTitleColor(UIColor(named: "appText"), for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        self.view.addSubview(button)
+        
         NSLayoutConstraint.activate([
-            scene.topAnchor.constraint(equalTo: view.topAnchor),
-            scene.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            scene.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            scene.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-        ])
-    }
-}
-
-extension ViewController: CellSelectionDelegate {
-    func didChangeScene(index: Int, penalty: Int) {
-        finalGraduation += penalty
-        if index != 4 {
-            let newView = SceneView(frame: .zero, scene: scenes[index], selectionDelegate: self)
-            SceneView.animate(withDuration: 0.3,
-                                animations: { self.scene.alpha = 0.0 },
-                                completion: {(value: Bool) in
-                                    self.scene.removeFromSuperview()
-                                    self.scene = newView
-                                    self.setupHierarchy()
-                                    self.setupComponents()
-                                    self.setupConstraints()
-                                })
-        }
-        else {
-            var newScene = scenes[index]
-            var newDescription: String
-            var newImageName: String
-            if finalGraduation > 0 {
-                newDescription = descriptions[finalGraduation]
-                newImageName = kimonos[finalGraduation]
-            }
-            else {
-                newDescription = descriptions[0]
-                newImageName = kimonos[0]
-            }
+            description.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            description.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant:  -200),
             
-            newScene.description = newDescription
-            newScene.options.append(Option(description: "Voltar ao início", nextScene: 0, penalty: -finalGraduation, imageName: newImageName))
-            let newView = SceneView(frame: .zero, scene: newScene, selectionDelegate: self)
-            SceneView.animate(withDuration: 0.3,
-                                animations: { self.scene.alpha = 0.0 },
-                                completion: {(value: Bool) in
-                                    self.scene.removeFromSuperview()
-                                    self.scene = newView
-                                    self.setupHierarchy()
-                                    self.setupComponents()
-                                    self.setupConstraints()
-                                })
-        }
+            imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 360),
+            imageView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -250),
+            imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60),
+            imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60),
+            
+            button.topAnchor.constraint(equalTo: view.topAnchor, constant: 650),
+            button.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -130),
+            button.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 70),
+            button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -70),
+        ])
     }
 }

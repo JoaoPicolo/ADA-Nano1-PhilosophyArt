@@ -65,8 +65,7 @@ extension Carousel: UICollectionViewDataSource {
         return options.count
     }
     
-    @objc
-    func cellTapped(sender:UITapGestureRecognizer) {
+    @objc private func cellTapped(sender:UITapGestureRecognizer) {
         selectionDelegate.didChangeScene(index: options[selectedIndex].nextScene, penalty: options[selectedIndex].penalty)
     }
     

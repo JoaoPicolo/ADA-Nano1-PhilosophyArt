@@ -19,6 +19,7 @@
 		C41E9F8D26A8689A00E7FCB6 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41E9F8C26A8689A00E7FCB6 /* Scene.swift */; };
 		C41E9F9026A86D1000E7FCB6 /* sceneData.json in Resources */ = {isa = PBXBuildFile; fileRef = C41E9F8F26A86D1000E7FCB6 /* sceneData.json */; };
 		C41E9F9226A86EC400E7FCB6 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41E9F9126A86EC400E7FCB6 /* ModelData.swift */; };
+		C4DCE05D26AB5F6C004C89C6 /* SceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DCE05C26AB5F6C004C89C6 /* SceneViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		C41E9F8C26A8689A00E7FCB6 /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		C41E9F8F26A86D1000E7FCB6 /* sceneData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sceneData.json; sourceTree = "<group>"; };
 		C41E9F9126A86EC400E7FCB6 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		C4DCE05C26AB5F6C004C89C6 /* SceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				C41DF5EA26A9023500001ECF /* SceneView.swift */,
+				C4DCE05C26AB5F6C004C89C6 /* SceneViewController.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4DCE05D26AB5F6C004C89C6 /* SceneViewController.swift in Sources */,
 				C41E9F8A26A862F800E7FCB6 /* CarouselLayout.swift in Sources */,
 				C41E9F7826A845C400E7FCB6 /* ViewController.swift in Sources */,
 				C41E9F8D26A8689A00E7FCB6 /* Scene.swift in Sources */,
