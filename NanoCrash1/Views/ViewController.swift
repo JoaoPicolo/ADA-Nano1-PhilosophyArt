@@ -9,6 +9,9 @@ import UIKit
 
 class ViewController: UIViewController {
     let scenes: [Scene] = ModelData().scenes
+    var kimonos: [String] = ModelData().kimonos
+    var descriptions: [String] = ModelData().descriptions
+    var finalGraduation = 0
     lazy var scene = SceneView(frame: .zero, scene: scenes[0], selectionDelegate: self)
     
     override func viewDidLoad() {
@@ -44,15 +47,44 @@ class ViewController: UIViewController {
 
 extension ViewController: CellSelectionDelegate {
     func didChangeScene(index: Int, penalty: Int) {
-        let newView = SceneView(frame: .zero, scene: scenes[index], selectionDelegate: self)
-        SceneView.animate(withDuration: 0.3,
-                            animations: { self.scene.alpha = 0.0 },
-                            completion: {(value: Bool) in
-                                self.scene.removeFromSuperview()
-                                self.scene = newView
-                                self.setupHierarchy()
-                                self.setupComponents()
-                                self.setupConstraints()
-                            })
+        finalGraduation += penalty
+        if index != 4 {
+            let newView = SceneView(frame: .zero, scene: scenes[index], selectionDelegate: self)
+            SceneView.animate(withDuration: 0.3,
+                                animations: { self.scene.alpha = 0.0 },
+                                completion: {(value: Bool) in
+                                    self.scene.removeFromSuperview()
+                                    self.scene = newView
+                                    self.setupHierarchy()
+                                    self.setupComponents()
+                                    self.setupConstraints()
+                                })
+        }
+        else {
+            var newScene = scenes[index]
+            var newDescription: String
+            var newImageName: String
+            if finalGraduation > 0 {
+                newDescription = descriptions[finalGraduation]
+                newImageName = kimonos[finalGraduation]
+            }
+            else {
+                newDescription = descriptions[0]
+                newImageName = kimonos[0]
+            }
+            
+            newScene.description = newDescription
+            newScene.options.append(Option(description: "Voltar ao início", nextScene: 0, penalty: -finalGraduation, imageName: newImageName))
+            let newView = SceneView(frame: .zero, scene: newScene, selectionDelegate: self)
+            SceneView.animate(withDuration: 0.3,
+                                animations: { self.scene.alpha = 0.0 },
+                                completion: {(value: Bool) in
+                                    self.scene.removeFromSuperview()
+                                    self.scene = newView
+                                    self.setupHierarchy()
+                                    self.setupComponents()
+                                    self.setupConstraints()
+                                })
+        }
     }
 }

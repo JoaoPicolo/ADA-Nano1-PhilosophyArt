@@ -92,7 +92,7 @@ extension Carousel: UICollectionViewDataSource {
             imageView.leadingAnchor.constraint(equalTo: cell.leadingAnchor, constant: 60),
             imageView.trailingAnchor.constraint(equalTo: cell.trailingAnchor, constant: -60),
             
-            description.centerYAnchor.constraint(equalTo: cell.centerYAnchor, constant: 150),
+            description.centerYAnchor.constraint(equalTo: cell.centerYAnchor, constant: 200),
             description.centerXAnchor.constraint(equalTo: cell.centerXAnchor, constant: -2)
         ])
         return cell
