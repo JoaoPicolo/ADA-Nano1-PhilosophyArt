@@ -93,13 +93,13 @@ extension Carousel: UICollectionViewDataSource {
         cell.contentView.addSubview(button)
             
         NSLayoutConstraint.activate([
-            imageView.topAnchor.constraint(equalTo: cell.topAnchor, constant: 220),
-            imageView.bottomAnchor.constraint(equalTo: cell.bottomAnchor, constant: -250),
+            imageView.topAnchor.constraint(equalTo: cell.topAnchor, constant: 240),
+            imageView.bottomAnchor.constraint(equalTo: cell.bottomAnchor, constant: -270),
             imageView.leadingAnchor.constraint(equalTo: cell.leadingAnchor, constant: 60),
             imageView.trailingAnchor.constraint(equalTo: cell.trailingAnchor, constant: -60),
             
-            button.topAnchor.constraint(equalTo: cell.topAnchor, constant: 520),
-            button.bottomAnchor.constraint(equalTo: cell.bottomAnchor, constant: -160),
+            button.topAnchor.constraint(equalTo: cell.topAnchor, constant: 550),
+            button.bottomAnchor.constraint(equalTo: cell.bottomAnchor, constant: -140),
             button.leadingAnchor.constraint(equalTo: cell.leadingAnchor, constant: 70),
             button.trailingAnchor.constraint(equalTo: cell.trailingAnchor, constant: -70),
         ])
