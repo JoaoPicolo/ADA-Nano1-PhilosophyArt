@@ -47,17 +47,17 @@ class ViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             description.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            description.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant:  -200),
+            description.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -(view.bounds.height / 4)),
             
-            imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 360),
-            imageView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -250),
-            imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60),
-            imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60),
+            imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: (view.bounds.height / 2.4)),
+            imageView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -(view.bounds.height / 3)),
+            imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: (view.bounds.width / 5)),
+            imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -(view.bounds.width / 5)),
             
-            button.topAnchor.constraint(equalTo: view.topAnchor, constant: 650),
-            button.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -130),
-            button.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 70),
-            button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -70),
+            button.topAnchor.constraint(equalTo: view.topAnchor, constant: (view.bounds.height / 1.3)),
+            button.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -(view.bounds.height / 6)),
+            button.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: (view.bounds.width / 6)),
+            button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -(view.bounds.width / 6)),
         ])
     }
 }
