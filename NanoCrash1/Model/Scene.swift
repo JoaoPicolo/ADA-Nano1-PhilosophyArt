@@ -8,17 +8,6 @@
 import Foundation
 import UIKit
 
-enum Graduation {
-    case nenhuma
-    case branca
-    case amarela
-    case laranja
-    case verde
-    case roxa
-    case marrom
-    case preta
-}
-
 struct Option: Hashable, Codable {
     var description: String
     var nextScene: Int
