@@ -13,8 +13,8 @@ class SceneViewController: UIViewController {
     var descriptions: [String] = ModelData().descriptions
     var finalGraduation = 0
     var currentIndex = 0
-    lazy var scene = SceneView(frame: .zero, scene: scenes[currentIndex], selectionDelegate: self)
-    
+    lazy var scene = SceneView(frame: view.frame, scene: scenes[currentIndex], selectionDelegate: self)
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupHierarchy()

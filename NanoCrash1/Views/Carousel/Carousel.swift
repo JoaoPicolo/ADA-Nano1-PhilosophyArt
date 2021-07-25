@@ -17,6 +17,7 @@ class Carousel: UIView {
         collectionViewLayout: CarouselLayout()
     )
     
+    let screenBounds = UIScreen.main.bounds
     var options: [Option] = []
     var selectedIndex: Int = 0
     var selectionDelegate: CellSelectionDelegate!
@@ -89,19 +90,19 @@ extension Carousel: UICollectionViewDataSource {
         button.layer.cornerRadius = 20
         button.setTitle(options[indexPath.row].description, for: .normal)
         button.setTitleColor(UIColor(named: "appText"), for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+        button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .title3)
         cell.contentView.addSubview(button)
             
         NSLayoutConstraint.activate([
-            imageView.topAnchor.constraint(equalTo: cell.topAnchor, constant: 240),
-            imageView.bottomAnchor.constraint(equalTo: cell.bottomAnchor, constant: -270),
-            imageView.leadingAnchor.constraint(equalTo: cell.leadingAnchor, constant: 60),
-            imageView.trailingAnchor.constraint(equalTo: cell.trailingAnchor, constant: -60),
+            imageView.topAnchor.constraint(equalTo: cell.topAnchor, constant: (screenBounds.height / 3.5)),
+            imageView.bottomAnchor.constraint(equalTo: cell.bottomAnchor, constant: -(screenBounds.height / 3)),
+            imageView.leadingAnchor.constraint(equalTo: cell.leadingAnchor, constant: (screenBounds.width / 6)),
+            imageView.trailingAnchor.constraint(equalTo: cell.trailingAnchor, constant: -(screenBounds.width / 6)),
             
-            button.topAnchor.constraint(equalTo: cell.topAnchor, constant: 550),
-            button.bottomAnchor.constraint(equalTo: cell.bottomAnchor, constant: -140),
-            button.leadingAnchor.constraint(equalTo: cell.leadingAnchor, constant: 70),
-            button.trailingAnchor.constraint(equalTo: cell.trailingAnchor, constant: -70),
+            button.topAnchor.constraint(equalTo: cell.topAnchor, constant: (screenBounds.height / 1.6)),
+            button.bottomAnchor.constraint(equalTo: cell.bottomAnchor, constant: -(screenBounds.height / 5)),
+            button.leadingAnchor.constraint(equalTo: cell.leadingAnchor, constant: (screenBounds.width / 6)),
+            button.trailingAnchor.constraint(equalTo: cell.trailingAnchor, constant: -(screenBounds.width / 6)),
         ])
         return cell
     }

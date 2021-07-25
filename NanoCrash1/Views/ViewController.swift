@@ -42,7 +42,7 @@ class ViewController: UIViewController {
         button.layer.cornerRadius = 20
         button.setTitle("Começar", for: .normal)
         button.setTitleColor(UIColor(named: "appText"), for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .title3)
         self.view.addSubview(button)
         
         NSLayoutConstraint.activate([

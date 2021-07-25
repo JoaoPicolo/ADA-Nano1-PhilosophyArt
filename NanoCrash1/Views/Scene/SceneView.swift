@@ -10,6 +10,7 @@ import UIKit
 class SceneView: UIView {
     private lazy var sceneView = UIView(frame: .zero)
     
+    let screenBounds = UIScreen.main.bounds
     var scene: Scene
     var carousel: Carousel
     var sceneDescription = UILabel()
@@ -34,7 +35,7 @@ class SceneView: UIView {
         sceneDescription.text = scene.description
         sceneDescription.numberOfLines = 0
         sceneDescription.translatesAutoresizingMaskIntoConstraints = false
-        sceneDescription.font = UIFont.systemFont(ofSize: 18, weight: .regular)
+        sceneDescription.font = UIFont.preferredFont(forTextStyle: .title2)
         sceneDescription.textColor = UIColor(named: "appText")
         sceneView.addSubview(sceneDescription)
         
@@ -47,12 +48,12 @@ class SceneView: UIView {
             sceneView.trailingAnchor.constraint(equalTo: trailingAnchor),
             sceneView.leadingAnchor.constraint(equalTo: leadingAnchor),
 
-            sceneDescription.topAnchor.constraint(equalTo: topAnchor, constant: -450),
+            sceneDescription.topAnchor.constraint(equalTo: topAnchor, constant: -(screenBounds.height / 2)),
             sceneDescription.bottomAnchor.constraint(equalTo: bottomAnchor),
-            sceneDescription.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25),
-            sceneDescription.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25),
+            sceneDescription.leadingAnchor.constraint(equalTo: leadingAnchor, constant: (screenBounds.width / 12)),
+            sceneDescription.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -(screenBounds.width / 12)),
             
-            carousel.topAnchor.constraint(equalTo: topAnchor, constant: 100),
+            carousel.topAnchor.constraint(equalTo: topAnchor, constant: (screenBounds.height / 10)),
             carousel.bottomAnchor.constraint(equalTo: bottomAnchor),
             carousel.leadingAnchor.constraint(equalTo: leadingAnchor),
             carousel.trailingAnchor.constraint(equalTo: trailingAnchor),
