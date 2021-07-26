@@ -48,7 +48,7 @@ class SceneView: UIView {
             sceneView.trailingAnchor.constraint(equalTo: trailingAnchor),
             sceneView.leadingAnchor.constraint(equalTo: leadingAnchor),
 
-            sceneDescription.topAnchor.constraint(equalTo: topAnchor, constant: -(screenBounds.height / 2)),
+            sceneDescription.topAnchor.constraint(equalTo: topAnchor, constant: -(screenBounds.height / 2.2)),
             sceneDescription.bottomAnchor.constraint(equalTo: bottomAnchor),
             sceneDescription.leadingAnchor.constraint(equalTo: leadingAnchor, constant: (screenBounds.width / 12)),
             sceneDescription.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -(screenBounds.width / 12)),
